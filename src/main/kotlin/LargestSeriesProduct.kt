@@ -1,7 +1,7 @@
 class Series(private val input: String) {
 
     init {
-        if (!input.all { char -> char.toInt() in 48..57 }) {
+        if (!input.all { char -> char.toInt() in ASCII_CODE_FOR_0..ASCII_CODE_FOR_9 }) {
             throw IllegalArgumentException()
         }
     }
@@ -37,3 +37,6 @@ class Series(private val input: String) {
         return lsp
     }
 }
+
+private const val ASCII_CODE_FOR_0 = 48
+private const val ASCII_CODE_FOR_9 = 57
